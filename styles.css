@@ -1,0 +1,328 @@
+body {
+    background-color:#0D0D0D;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-width: 970px;
+}
+
+header {
+    font-family: 'Reem Kufi Ink', sans-serif;
+    font-size: 2rem;
+    justify-content: center;
+    display: flex;
+}
+
+h2 {
+    font-family: 'Bungee Spice', cursive;
+}
+
+h3 {
+    margin: auto;
+}
+
+
+br {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#game {
+    display: flex;
+    flex-direction: row;
+}
+
+/* ----------------- <game> -------------------*/
+
+#leftparent
+{
+    flex-basis: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: auto;
+    height: 100%;
+    padding-right: 5px;
+    padding-left: 5px;
+        
+}
+
+.left {
+    /*flex: 30;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#simonparent
+{
+    flex-basis: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: auto;
+    height: 100%;
+    padding-right: 5px;
+    padding-left: 5px;
+        
+}
+
+
+#simon {
+    display: flex;
+    display: grid;
+    grid-template-areas: 
+    "b-green  b-red"
+    "b-yellow b-blue";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    
+}
+
+.rightparent
+{
+    flex-basis: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: auto;
+    height: 100%;
+    padding-right: 5px;
+    padding-left: 5px;
+        
+}
+
+.right {
+    /*flex: 30;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+/* ----------------- <left> -------------------*/
+
+.difficulty {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #485B73;
+    border-radius: 10%;
+    height: 4rem;
+    text-align: center;
+}
+
+.historie {
+    background-color: #485B73;
+    border-radius: 5%;
+    min-width: 240px;
+    height: 20rem;
+    text-align: center;
+    padding-top: 25px;
+}
+
+/* ----------------- <difficulty> -------------------*/
+
+.level {
+    flex: 1;
+    background-color: #06090D;
+    border: none;
+    border-radius: 30%;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    margin: 0% 5% 0% 5%;
+    width: 1rem;
+    height: 3rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.level:active {
+    background-color: #121B26;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+/* ----------------- <simon> -------------------*/
+
+
+#firstGrn {
+    /*grid-area: b-green;*/
+    background: #3EC70B;
+    border-top-left-radius: 20%;
+    height: 17rem;
+    width: 17rem;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #2B2B2B;
+}
+
+#firstGrn.light{
+    background: #49FF00;
+    border-color: #912e0d;
+  }
+
+#firstGrn.mouseover {
+    background:#36AE7C;
+    border-color: #171010;
+
+}
+
+#secondRed {
+    grid-area: b-red;
+    background-color: #C21010;
+    border-top-right-radius: 20%;
+    height: 17rem;
+    width: 17rem;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #2B2B2B;
+}
+
+#secondRed.light{
+    background: #FF0000;
+    border-color: #29b819;
+  }
+
+#secondRed.mouseover {
+    background:#E64848;
+    border-color: #171010;
+
+}
+
+
+#thirdBlu {
+    grid-area: b-blue;
+    background-color: #0096FF;   
+    border-bottom-right-radius: 20%;
+    height: 17rem;
+    width: 17rem;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #2B2B2B;
+}
+
+#thirdBlu.light{
+    background: #00D7FF;
+    border-color: #9e300b;
+  }
+
+#thirdBlu.mouseover {
+    background:#4D96FF;
+    border-color: #171010;
+
+}
+
+
+#fourthYlw {
+    grid-area: b-yellow;
+    background-color: #F7EC09;
+    border-bottom-left-radius: 20%;
+    height: 17rem;
+    width: 17rem;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #2B2B2B;
+}
+
+#fourthYlw.light{
+    background: #FBFF00;
+    border-color: #aa3d18;
+  }
+
+#fourthYlw.mouseover {
+    background:#FFD93D;
+    border-color: #171010;
+
+}
+
+
+#circle {
+    position:absolute;
+    background: #92A9BD;
+    border-radius: 50%;
+    width: 14rem;
+    height: 14rem;
+    color: #0D0D0D;
+    display: flex;
+    font-family: 'New Athletic';
+    font-size: 38px;
+    margin: auto;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #2B2B2B;
+}
+
+#circle.light{
+    background: #D3DEDC;
+    border-color: #423F3E;
+  }
+
+#circle.mouseover {
+    background: #7C99AC;
+    border-color: #171010;
+
+}
+
+
+/* ----------------- <right> -------------------*/
+
+#lives {
+    background-color: #485B73;
+    border-radius: 5%;
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#main {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ----------------- <main> -------------------*/
+
+#start {
+    /*background-color: #485B73;*/
+    background-color: #485B73;
+    border: none;
+    border-radius: 3%;
+    color: white;
+    width: 10rem;
+    height: 3rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#start.light{
+    background-color: #8a5510;
+}
+
+#start.mouseover{
+    background-color: #dc9230;
+}
+
+
+#count {
+    background-color: #485B73;
+    border-radius: 5%;
+    width: 10rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

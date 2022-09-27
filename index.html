@@ -4,11 +4,93 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ITK - Simon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Oswald&family=Reem+Kufi+Ink&display=swap" rel="stylesheet">     
+    <link rel="stylesheet" href="./styles.css">
+    <link href="./index.js">
+    <title>Simon Game</title>
+
+    <audio id="greenAudio">
+        <source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"></source>
+    </audio>
+    <audio id="redAudio">
+        <source src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"></source>
+    </audio>
+    <audio id="yellowAudio">
+        <source src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"></source>
+    </audio>
+    <audio id="blueAudio">
+        <source src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"></source>
+    </audio>
+    <audio id="startAudio">
+        <source src="./media/sounds/button-start.mp3"></source>
+    </audio>
+    <audio id="wrongAudio">
+        <source src="./media/sounds/button-wrong.mp3"></source>
+    </audio>
+    <audio id="winnerAudio">
+        <source src="./media/sounds/button-winner.mp3"></source>
+    </audio>
+
 </head>
 <body>
-    <!-- Good luck! -->
+    <header>
+        <h1>THE SIMON GAME</h1>
+    </header>
+    <div id="game">
 
-    <script src="./index.js"></script>
+        <div id="leftparent">
+            <div class="left">
+                <h2>Difficulty</h2>
+                <div class="difficulty">
+                    <button type="button" class="level" id="easy">
+                        EASY
+                    </button>
+                    <button type="button" class="level" id="normal">
+                        NORMAL
+                    </button>
+                    <button type="button" class="level" id="hard">
+                        HARD
+                    </button>
+                </div>
+                <br>
+                <h2>Historie Score</h2>
+                <div class="historie">
+                </div>
+            </div>
+
+        </div>
+
+        <div id="simonparent">
+            <div id="simon">
+                <div id="circle"><h3>SIMON!</h3></div>
+                <div id="firstGrn"></div>
+                <div id="secondRed"></div>
+                <div id="thirdBlu"></div>
+                <div id="fourthYlw"></div>
+            </div>
+        </div>
+
+        <div class="rightparent">
+            <div class="right">
+            <h2>Lives</h2>
+            <div id="lives">
+            </div>
+            <br>
+            <div id="main">
+                <button type="button" id="start">Start</button> 
+                <h2>Level</h2>
+                <div id="count"><strong></strong>
+                </div> <!--main end-->
+            </div>
+        </div>
+    </div>
+
+        
+    </div> <!--end of game container-->
+    <!-- Good luck! -->
+    <script  src="index.js"></script>
+    <!--<script type="module" src="./index.js"></script>-->
 </body>
 </html>

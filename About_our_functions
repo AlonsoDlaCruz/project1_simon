@@ -1,0 +1,27 @@
+------------------------------
+----Ready to use functions---- 
+-that affects html appareance-
+------and displaying text-----
+------------------------------
+
+lightOn(btncolor);
+	**Takes the name of a in-game button and set the color to it's light class
+
+dimmOver(btncolor)
+	**Takes the name of a in-game button and set the color to it's dimmed(mouseover) class
+
+removeDimm(btncolor)
+	**Takes the name of a in-game button and remove the dimmed (mouseover) class
+
+getCount(value);
+ 	**Takes any value and shows it in the Count Display
+
+getLives(value);
+	**Takes any value and shows it in the lives Display
+
+getHistory(value);
+	**Takes any value and shows it in the historie Display
+  
+  
+  Every function here is tested and must not be changed to force any feature. 
+  Please use them instead of type the whole line.

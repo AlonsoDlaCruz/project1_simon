@@ -9,6 +9,8 @@ let dificult=2;
 let remain=1; //To know remaining answers to pass level
 let gameArray=[];
 let toWin=3; //Level needed to win
+let intervalId;
+let count=0;
 
 
 //dummy variables
@@ -65,72 +67,53 @@ function removeDimm(btncolor){
 //----SIMON AUX FUNCTIONS-----
 
  // make buttons shine
- function blink(button)
+function blink(button)
 {
-
     lightOn(button)
-
     setTimeout(function(){
-
         removeDimm(button);
-
-    }, 1000);
+    }, 800);
 
 };
 
 // Game highliths the selected buttons
 function gameTurn() {
-    console.log("init: gameTurn")
-    PCturn=true;
-        for (let i = 0; i < remain; i++) {
 
-            setTimeout(function(){
-                getHistory("PC TURN");       
-            }, 1000);
+    if(count == remain) {
+        PCturn = false;
+        count = 0;
+        clearInterval(intervalId);
+    } else {
+        PCturn = true;
+    }
 
-            
-            switch (gameArray[i])  {                
-                case 1:
-                    setTimeout(function(){
-                        greenAudio.play();
-                        blink(firstGrn);
-                    }, 1000);
-                    console.log("selected: button green")
-                    break;
-                case 2:
-                    setTimeout(function(){
-                        redAudio.play();
-                        blink(secondRed);
-                    }, 1000);
-                    console.log("selected: button green")
-                    break;
-                case  3:
-                    setTimeout(function(){
-                        blueAudio.play();
-                        blink(thirdBlu);
-                    }, 1000);
-                    
-                    console.log("selected: button blue")
-                    break;
-                case 4:
-                    setTimeout(function(){
-                        yellowAudio.play();
-                        blink(fourthYlw);
-                    }, 1000);
-                    
-                    console.log("selected: button yellow")
-                    break;
-                default:
-                    console.log("Number in arr not valid");
-            }
-
-            setTimeout(function(){
-                getHistory("PLAYING...");       
-            }, 1000);
-
+    if(PCturn) {
+        console.log("init: gameTurn")
+        PCturn=true;
+        switch (gameArray[count])  {                
+            case 1:
+                greenAudio.play();
+                blink(firstGrn);
+                break;
+            case 2:
+                redAudio.play();
+                blink(secondRed);
+                break;
+            case  3:
+                blueAudio.play();
+                blink(thirdBlu);
+                break;
+            case 4:
+                yellowAudio.play();
+                blink(fourthYlw);    
+                break;
+            default:
+                console.log("Number in arr not valid");
         }
         getHistory("YOUR TURN");
-        PCturn = false;
+        count++        
+    }
+    
 }
 
 
@@ -168,10 +151,7 @@ function startgame()
     getLives(lives);
     getCount(lvl);
     initArr();
-    setTimeout(function(){
-          gameTurn();    
-    }, 1000);
-    
+    intervalId = setInterval(gameTurn, 800);    
 }
 
 function stopgame()
@@ -216,9 +196,7 @@ function restartgame()
     //gameArray=[1,3,2,1]; //different array in extra mode
     getLives(lives);
     getCount(lvl);
-    setTimeout(function(){
-        gameTurn();    
-  }, 1000);
+    intervalId = setInterval(gameTurn, 800);     
 }
 
 
@@ -242,9 +220,7 @@ function chkAnswer(place){
                     winnerAudio.play();
                 }
                 else{
-                    setTimeout(function(){
-                        gameTurn();
-                    }, 1000);
+                    intervalId = setInterval(gameTurn, 800); 
                 }
 
             }
